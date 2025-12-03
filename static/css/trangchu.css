@@ -1,0 +1,265 @@
+\/* Layout chính */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+/* abc.css */
+.sidebar {
+    width: 20%;
+    min-height: 100vh;
+    background-color: #1B3C53; /* Nền mới */ /* Xanh đậm */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2); /* Bóng nhẹ bên cạnh */
+    transition: all 0.3s ease;
+}
+
+.sidebar .logo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 40px 0;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.sidebar .menu-item {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa icon và chữ */
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px; /* Bo góc mềm mại */
+    margin: 8px 10px; /* Khoảng cách giữa các menu-item */
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+
+.sidebar .menu-item i {
+    width: 20px; /* Căn chỉnh icon đồng đều */
+    text-align: center;
+}
+
+.sidebar .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px); /* Di chuyển nhẹ khi hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* abc.css */
+
+/* Top bar */
+.top-bar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #1B3C53;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px 10px 0 0; /* Bo góc trên */
+}
+
+/* Menu option góc phải */
+.top-option .option-btn {
+    background-color: #D2C1B6;
+    color: #0A2540; /* Xanh than */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.top-option .option-btn:hover {
+    background-color: #0A2540; /* Xanh than */
+    color: white; /* Màu nắng */
+}
+
+/* Dropdown item */
+.top-option .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0A2540; /* Xanh than */
+    transition: all 0.3s;
+}
+
+.top-option .dropdown-item:hover {
+    background-color: #0A2540; /* Nền xanh than */
+    color: white; /* Chữ màu nắng */
+}
+
+.top-option .dropdown-item i {
+    min-width: 20px; /* Căn icon đều */
+}
+
+/* Container chia 3 khung trạng thái */
+.status-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Khung trạng thái chung */
+.status-box {
+    flex: 1; /* Mỗi khung cân đều */
+    background-color: #456882;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+    color: white;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Khung hover */
+.status-box:hover {
+    transform: translateY(-3px);
+    background-color: #567a94;
+}
+
+/* Khung chưa điểm danh khác icon (nếu muốn) */
+.status-box.pending i {
+    color: #FFD700; /* icon vàng */
+}
+
+/* Khung đến muộn khác icon (nếu muốn) */
+.status-box.late i {
+    color: #FF4D4D; /* icon đỏ */
+}
+
+/* H4 và P màu trắng */
+.status-box h4,
+.status-box p {
+    color: white;
+}
+
+/* Icon */
+.status-box i {
+    display: block;
+    margin: 0 auto 10px;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+/* Responsive (tuỳ chỉnh nếu muốn) */
+@media (max-width: 1200px) {
+    .sidebar, .option-menu {
+        display: none;
+    }
+    .body {
+        width: 100%;
+    }
+}
+/* Modal nền và bo góc */
+.edit-modal, .delete-modal {
+    background-color: #1B3C53;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.edit-modal .modal-header, .delete-modal .modal-header {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Title */
+.edit-modal .modal-title, .delete-modal .modal-title {
+    color: white;
+    font-weight: 600;
+}
+
+/* Nút đóng */
+.edit-modal .btn-close-white, .delete-modal .btn-close-white {
+    filter: invert(1);
+}
+
+/* Input và select */
+.edit-modal .form-control, .edit-modal .form-select {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #2A5568;
+    color: white;
+}
+.edit-modal .form-control::placeholder {
+    color: #B0C4C8;
+}
+.shift-modal {
+    background-color: #1B3C53;
+    color: white;
+    border-radius: 12px;
+}
+.shift-modal .form-label {
+    color: #fff;
+}
+.btn-ok {
+    background-color: #1B3C53;
+    color: white;
+    border: none;
+}
+.btn-ok:hover {
+    background-color: #255773;
+}
+
+/* Nút OK */
+.edit-modal .btn-ok, .delete-modal .btn-ok {
+    background-color: #5ABFDC;
+    color: #1B3C53;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.edit-modal .btn-ok:hover, .delete-modal .btn-ok:hover {
+    background-color: #48A9C5;
+    color: white;
+}
+
+/* Nút Hủy */
+.edit-modal .btn-cancel, .delete-modal .btn-cancel {
+    background-color: white;
+    color: #1B3C53;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.edit-modal .btn-cancel:hover, .delete-modal .btn-cancel:hover {
+    background-color: #1B3C53;
+    color: #FFD700; /* Màu nắng */
+}
+
+/* Nút Sửa/Xóa trong bảng */
+.btn-edit {
+    background-color: #5ABFDC;
+    color: #1B3C53;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.btn-edit:hover { background-color: #48A9C5; color: white; }
+
+.btn-delete {
+    background-color: #FF4D4D;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.btn-delete:hover { background-color: #E33D3D; }

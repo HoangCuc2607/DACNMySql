@@ -1,0 +1,50 @@
+body {
+    background-color: #f0f4f7;
+}
+
+.registration-card {
+    background-color: #1B3C53;
+    border-radius: 15px;
+    width: 450px;
+}
+
+.registration-card .form-control,
+.registration-card .form-select {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #2A5568;
+    color: white;
+}
+
+.registration-card .form-control::placeholder {
+    color: #B0C4C8;
+}
+
+.btn-ok {
+    background-color: #5ABFDC;
+    color: #1B3C53;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 48%;
+    transition: all 0.3s;
+}
+
+.btn-ok:hover {
+    background-color: #48A9C5;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: white;
+    color: #1B3C53;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 48%;
+    transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #1B3C53;
+    color: #FFD700;
+}

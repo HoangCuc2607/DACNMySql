@@ -1,0 +1,29 @@
+<!-- Modal Điểm danh -->
+<div class="modal fade" id="checkInModal" tabindex="-1" aria-labelledby="checkInModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content checkin-modal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkInModalLabel"><i class="fa-solid fa-user-check me-2"></i>Điểm danh nhân viên</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="employeeEmail" class="form-label">Nhập email nhân viên:</label>
+          <input type="email" class="form-control email-input" id="employeeEmail" placeholder="example@company.com">
+        </div>
+        <div class="mb-3">
+          <label for="shiftSelect" class="form-label">Chọn ca:</label>
+          <select class="form-select" id="shiftSelect">
+            <option value="1">Ca sáng</option>
+            <option value="2">Ca chiều</option>
+            <option value="3">Ca tối</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-ok" id="checkInBtn">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

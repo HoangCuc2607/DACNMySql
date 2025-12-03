@@ -1,0 +1,51 @@
+/* modal_shift.css */
+.shift-modal {
+  border-radius: 16px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.shift-header {
+  background-color: #1B3C53;
+  color: #fff;
+  border-bottom: none;
+}
+
+.ca-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(27, 60, 83, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ca-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(27, 60, 83, 0.25);
+}
+
+.ca-box h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1B3C53;
+}
+
+.ca-box label {
+  font-weight: 500;
+  color: #1B3C53;
+}
+
+.ca-time {
+  border: 1px solid #1B3C53;
+  border-radius: 8px;
+}
+
+.employee-checkbox-list {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #1B3C53;
+  border-radius: 8px;
+  padding: 8px;
+}
+.employee-checkbox-list .form-check {
+  margin-bottom: 5px;
+}

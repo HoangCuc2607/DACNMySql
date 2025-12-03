@@ -1,0 +1,71 @@
+import mysql.connector
+
+def CreateDB():
+    connectdb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456"
+    )
+    cursor = connectdb.cursor()
+
+    # Tạo database
+    cursor.execute("CREATE DATABASE IF NOT EXISTS mydatabase")
+    cursor.execute("USE mydatabase")
+
+    # Bảng NhanVien
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS NhanVien (
+        ma_nhan_vien INT AUTO_INCREMENT PRIMARY KEY,
+        ho_ten VARCHAR(255) NOT NULL,
+        ngay_sinh DATE NOT NULL,
+        gioi_tinh ENUM('Nam', 'Nữ', 'Khác') NOT NULL,
+        dia_chi VARCHAR(255) NOT NULL,
+        so_dien_thoai VARCHAR(50) NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL
+    );
+    ''')
+
+    # Bảng DiemDanh
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS DiemDanh (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nhanvien_id INT NOT NULL,
+        ngay_diem_danh DATE NOT NULL,
+        ca_sang ENUM('Đã điểm danh', 'Đến muộn', 'Chưa điểm danh') DEFAULT NULL,
+        ca_chieu ENUM('Đã điểm danh', 'Đến muộn', 'Chưa điểm danh') DEFAULT NULL,
+        ca_toi ENUM('Đã điểm danh', 'Đến muộn', 'Chưa điểm danh') DEFAULT NULL,
+        FOREIGN KEY (nhanvien_id) REFERENCES NhanVien(ma_nhan_vien) ON DELETE CASCADE
+    );
+    ''')
+
+    # Bảng ChiaCa
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS ChiaCa (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        ngay DATE NOT NULL,
+        gio_bat_dau_ca_sang TIME,
+        gio_ket_thuc_ca_sang TIME,
+        gio_bat_dau_ca_chieu TIME,
+        gio_ket_thuc_ca_chieu TIME,
+        gio_bat_dau_ca_toi TIME,
+        gio_ket_thuc_ca_toi TIME
+    );
+    ''')
+
+    # Bảng trung gian nhiều-nhiều
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS ChiaCaNhanVien (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        chia_ca_id INT NOT NULL,
+        nhanvien_id INT NOT NULL,
+        ca ENUM('Sáng','Chiều','Tối') NOT NULL,
+        FOREIGN KEY (chia_ca_id) REFERENCES ChiaCa(id) ON DELETE CASCADE,
+        FOREIGN KEY (nhanvien_id) REFERENCES NhanVien(ma_nhan_vien) ON DELETE CASCADE
+    );
+    ''')
+
+    connectdb.commit()
+    connectdb.close()
+    print("Tạo cơ sở dữ liệu thành công!")
+
+CreateDB()

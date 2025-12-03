@@ -1,0 +1,60 @@
+/* Modal nền và bo góc */
+.checkin-modal {
+    background-color: #1B3C53;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.checkin-modal .modal-header {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Title */
+.checkin-modal .modal-title {
+    color: #1B3C53;
+    font-weight: 600;
+}
+
+/* Nút đóng */
+.checkin-modal .btn-close-white {
+    filter: invert(1);
+}
+
+/* Input email */
+.checkin-modal .email-input {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #2A5568;
+    color: white;
+}
+.checkin-modal .email-input::placeholder {
+    color: #B0C4C8;
+}
+/* Nút OK */
+.checkin-modal .btn-ok {
+    background-color: #1B3C53;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.checkin-modal .btn-ok:hover {
+    background-color: white;
+    color: #1B3C53;
+}
+
+/* Nút Hủy */
+.checkin-modal .btn-cancel {
+    background-color: white;
+    color: #1B3C53;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.checkin-modal .btn-cancel:hover {
+    background-color: #1B3C53;
+    color: #FFD700; /* Màu nắng */
+}
