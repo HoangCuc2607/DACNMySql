@@ -140,3 +140,33 @@ class DiemDanh:
         conn.close()
 
         return [DiemDanh(*r) for r in records]
+    
+    @staticmethod
+    def GetDiemDanhByThangAndNam(thang, nam):
+        conn = get_conn()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT 
+                    id, nhanvien_id, ngay_diem_danh, ca_sang, ca_chieu, ca_toi,
+
+                    (CASE WHEN ca_sang = 'Đã điểm danh' THEN 1 ELSE 0 END +
+                    CASE WHEN ca_chieu = 'Đã điểm danh' THEN 1 ELSE 0 END +
+                    CASE WHEN ca_toi = 'Đã điểm danh' THEN 1 ELSE 0 END
+                    ) AS da_diem_danh,
+
+                    (CASE WHEN ca_sang = 'Đến muộn' THEN 1 ELSE 0 END +
+                    CASE WHEN ca_chieu = 'Đến muộn' THEN 1 ELSE 0 END +
+                    CASE WHEN ca_toi = 'Đến muộn' THEN 1 ELSE 0 END
+                    ) AS den_muon
+
+                FROM DiemDanh
+                WHERE MONTH(ngay_diem_danh) = %s
+                AND YEAR(ngay_diem_danh) = %s
+                ORDER BY ngay_diem_danh;
+
+        
+        """, (thang, nam))
+        records = cursor.fetchall()
+        conn.close()
+
+        return records

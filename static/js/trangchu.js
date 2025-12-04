@@ -105,59 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==================== Chia ca ====================
-    const shiftMenu = document.getElementById('shiftMenu');
-    const shiftModalEl = document.getElementById('shiftModal');
-    const shiftModal = new bootstrap.Modal(shiftModalEl);
-
-    // Hiển thị ngày mai trong modal
-    const nextDateSpan = document.getElementById('nextDate');
-    if(nextDateSpan){
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 1);
-        const dd = String(tomorrow.getDate()).padStart(2,'0');
-        const mm = String(tomorrow.getMonth()+1).padStart(2,'0');
-        const yyyy = tomorrow.getFullYear();
-        nextDateSpan.textContent = `${dd}/${mm}/${yyyy}`;
-    }
-
-    if(shiftMenu){
-        shiftMenu.addEventListener('click', function(){
-            shiftModal.show();
-        });
-    }
-
-    // Lưu chia ca
-    document.getElementById('saveShiftBtn').addEventListener('click', function(){
-        const shiftData = {
-            ca1: document.getElementById('shift1').value,
-            ca2: document.getElementById('shift2').value,
-            ca3: document.getElementById('shift3').value
-        };
-
-        // Kiểm tra chọn đầy đủ
-        if(!shiftData.ca1 || !shiftData.ca2 || !shiftData.ca3){
-            alert("Vui lòng chọn nhân viên cho tất cả các ca!");
-            return;
-        }
-
-        fetch('/chia_ca', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(shiftData)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.message){
-                alert(data.message);
-                shiftModal.hide();
-            } else {
-                alert(data.error);
-            }
-        })
-        .catch(err => console.error(err));
-    });
+    
    // ==================== Tìm kiếm, filter, thống kê ====================
 const searchInput = document.querySelector('input[placeholder="Tìm kiếm nhân viên"]');
 const filterDropdown = document.querySelectorAll('.dropdown-menu a');

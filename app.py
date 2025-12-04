@@ -4,6 +4,7 @@ from controllers.DangnhapController import dang_nhap_bp
 from controllers.ModalChiacaController import chia_ca_bp
 from controllers.DangkyController import dang_ky_bp
 from controllers.ModalDiemdanhController import diem_danh_bp
+from controllers.ModalThongkeController import thong_ke_bp
 
 
 app = Flask(__name__)
@@ -15,6 +16,8 @@ app.register_blueprint(dang_nhap_bp)
 app.register_blueprint(chia_ca_bp, url_prefix = "/trangchu")
 app.register_blueprint(dang_ky_bp, url_prefix = "/trangchu")
 app.register_blueprint(diem_danh_bp, url_prefix = "/trangchu")
+app.register_blueprint(thong_ke_bp, url_prefix = "/trangchu")
+
 
 
 

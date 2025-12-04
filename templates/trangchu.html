@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/trangchu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/modalchiaca.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/modaldiemdanh.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modalthongke.css') }}">
+
+
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -26,20 +30,16 @@
     <i class="fa-solid fa-clock"></i>
     <span>Chia ca</span>
 </div>
-    <div class="menu-item" id="ThongkeMenu">
-    <i class="fa-solid fa-clock"></i>
-    <span>Thống kê</span>
+    <div class="menu-item" id="ThongkeCa">
+    <i class="fa-solid fa-user-check me-2"></i>
+    <span>Thống kê Ca</span>
+</div>
+    <div class="menu-item" id="ThongkeDiemDanh">
+    <i class="fa-solid fa-user-check me-2"></i>
+    <span>Thống kê Điểm danh</span>
+</div>
 </div>
 
-
-    <div class="menu-item">
-    <a href="#" onclick="confirmLogout()" class="d-flex align-items-center text-white text-decoration-none logout-btn">
-        <i class="fa-solid fa-right-from-bracket me-2"></i>
-        <span>Đăng xuất</span>
-    </a>
-</div>
-
-</div>
 
 
 
@@ -217,10 +217,14 @@
 
 {% include 'modalchiaca.html' %}
 {% include 'modaldiemdanh.html' %}
+{%include 'modalthongkediemdanh.html'%}
+{%include 'modalthongkeca.html'%}
 <script src="{{ url_for('static', filename='js/modalchiaca.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dangxuat.js') }}"></script>
 <script src="{{ url_for('static', filename='js/trangchu.js') }}"></script>
 <script src="{{ url_for('static', filename='js/modaldiemdanh.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modalthongke.js') }}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 

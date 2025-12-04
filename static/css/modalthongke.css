@@ -1,0 +1,100 @@
+/* ===== Modal Container ===== */
+.tk-modal {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 28px rgba(0,0,0,0.28);
+    background: #ffffff;
+}
+
+/* ===== HEADER ===== */
+.tk-header {
+    background: #1B3C53;
+    color: white;
+    padding: 16px 22px;
+}
+
+/* ===== LABEL ===== */
+.tk-label {
+    font-weight: 600;
+    color: #1B3C53;
+}
+
+/* ===== SELECT + INPUT ===== */
+.tk-select {
+    width: 140px;
+    border-radius: 10px;
+    border: 2px solid #1B3C53;
+    padding: 6px 10px;
+}
+
+.tk-select:focus {
+    box-shadow: 0 0 6px rgba(27, 60, 83, 0.4);
+}
+
+/* ===== BUTTON EXPORT ===== */
+.tk-btn-export {
+    background: #1B3C53;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: 500;
+    border: none;
+}
+
+.tk-btn-export:hover {
+    background: #153040;
+}
+
+/* ===== TABLE ===== */
+.tk-table {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #1B3C53 !important;
+}
+
+.tk-table thead tr {
+    background: #1B3C53;
+    color: white;
+    font-size: 15px;
+}
+
+.tk-table tbody tr {
+    background: #F8FBFD;
+}
+
+.tk-table tbody tr:nth-child(even) {
+    background: #E9F2F8;
+}
+
+.tk-table th, .tk-table td {
+    border: 1px solid #d0d9df !important;
+    padding: 10px 12px !important;
+}
+
+/* Hover từng dòng */
+.tk-table tbody tr:hover {
+    background: #dceaf5 !important;
+    transition: 0.25s;
+}
+
+/* Bo góc */
+.tk-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.tk-table thead tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.tk-table thead tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.tk-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.tk-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
