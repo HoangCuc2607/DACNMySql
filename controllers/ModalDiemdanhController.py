@@ -21,9 +21,16 @@ def diemdanh():
     else:
         #lay thong tin cua ca theo ngay va so ca de so sanh gio vao lam
         ca_infor = ChiaCa.lay_ca_theo_ngay_va_so(ngay, ca)
+        obj_ca = ChiaCa.lay_ca_theo_ngay(ngay)
+        ca_to_text = {1:"Sáng", 2: "Chiều", 3: "Tối"}
+
         if not ca_infor:
             return jsonify({'error': 'Chua co ca cho ngay nay'})
-        
+        #kiem tra nhan vien có o trong ca khong
+        nv_in_ca = ChiaCaNhanVien.GetNhanVienTheoCa(obj_ca.id, ca_to_text[ca])
+        if nv.ma_nhan_vien not in nv_in_ca:
+            return jsonify({'error': 'Nhân viên không có trong ca!'})
+
         # Chuyển giờ sang datetime.time
         start_td = ca_infor['start']
         print("start_td", start_td)

@@ -15,7 +15,6 @@ def format_time(td):
 def lay_danh_sach_chia_ca(ngay):
     #lay thoi gian tung ca va lay ten nhan vien
     chiaca = ChiaCa.lay_ca_theo_ngay(ngay)
-    print(type(chiaca.gio_bat_dau_ca_sang))
 
     if not chiaca:
         return jsonify({'error': 'Chưa có ca cho ngày này!'})

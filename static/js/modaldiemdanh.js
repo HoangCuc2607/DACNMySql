@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alert(data.error);
         } else {
           alert(`${data.message}: ${data.trang_thai}`);
+          location.reload()
           // Ẩn modal
           const modalEl = document.getElementById('checkInModal');
           bootstrap.Modal.getInstance(modalEl)?.hide();
