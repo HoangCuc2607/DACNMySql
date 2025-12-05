@@ -108,3 +108,34 @@ class ChiaCa:
             return {"start": ca.gio_bat_dau_ca_toi, "end": ca.gio_ket_thuc_ca_toi}
 
         return None
+    @staticmethod
+    def GetAllChiaCa():
+        conn = get_conn()
+        cursor = conn.cursor()
+        cursor.execute("""
+            select * from ChiaCa
+            """)
+        records = cursor.fetchall()
+        conn.close()
+        return [ChiaCa(*r) for r in records]
+    
+    @staticmethod
+    def GetChiaCaByThangAndNam(thang, nam):
+
+        query = """
+            SELECT *
+            FROM ChiaCa
+            WHERE MONTH(ngay) = %s AND YEAR(ngay) = %s
+            ORDER BY ngay ASC
+        """
+
+        conn = get_conn()
+        cursor = conn.cursor()
+
+        cursor.execute(query, (thang, nam))
+        records = cursor.fetchall()
+
+        conn.close()
+        return [ChiaCa(*r) for r in records]
+
+
