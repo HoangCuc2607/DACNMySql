@@ -263,3 +263,23 @@ body, html {
     font-weight: 500;
 }
 .btn-delete:hover { background-color: #E33D3D; }
+.table-container {
+    max-height: 40%;   /* chiều cao vùng cuộn */
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+/* Tùy chọn: làm scrollbar đẹp */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
