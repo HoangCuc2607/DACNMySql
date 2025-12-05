@@ -193,9 +193,6 @@ def export_thong_ke_ca():
     except Exception as e:
         print(e)
         
-from flask import send_file
-from io import BytesIO
-import openpyxl
 
 @thong_ke_bp.route("/export_thong_ke_diem_danh")
 def export_thong_ke_diem_danh():

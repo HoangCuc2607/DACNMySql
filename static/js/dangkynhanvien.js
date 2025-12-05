@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.message) {
                 alert(data.message);
-                // window.location.href = "/";
+                LoadForm();
+                // window.location.href = "/trangchu";
             } else if (data.error) {
                 alert("Lỗi: " + data.error);
             }
@@ -39,8 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
         cancelButton.addEventListener('click', function(e) {
             e.preventDefault(); // Ngăn form reset mặc định
             if (confirm("Bạn có chắc muốn hủy đăng ký không?")) {
-                window.location.href = "/"; // Quay về trang chủ
+                window.location.href = "/trangchu"; // Quay về trang chủ
             }
         });
     }
 });
+
+function LoadForm() {
+    const form = document.getElementById('registrationForm');
+
+    form.querySelector('input[placeholder="Nguyễn Văn A"]').value = "";
+    form.querySelector('input[placeholder="0123456789"]').value = "";
+    form.querySelector('input[placeholder^="Số nhà"]').value = "";
+    form.querySelector('input[type="date"]').value = "";
+    form.querySelector('input[placeholder="example@company.com"]').value = "";
+    form.querySelector('select[name="gioi_tinh"]').value = "";
+}

@@ -31,6 +31,10 @@ document.getElementById("btnLocThongKeCa").addEventListener("click", () => {
     const thang = document.getElementById("tkThang").value;
     const nam = document.getElementById("tkNam").value;
 
+    if (!thang || !nam) {
+        alert("Vui lòng chọn tháng và năm");
+        return;
+    }
     fetch("/trangchu/loc_thong_ke_ca", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

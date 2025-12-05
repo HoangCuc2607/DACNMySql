@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return res.json();
             })
             .then(data => {
+                if(data.error)
+                {
+                    alert(data.error)
+                }else{
+
                 ['ca_sang', 'ca_chieu', 'ca_toi'].forEach((caKey, index) => {
                     const i = index + 1;
                     // set giờ bắt đầu/kết thúc
@@ -23,8 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     data[caKey].nhanvien_ids.forEach(nv_id => {
                         const checkbox = document.getElementById(`ca${i}_nv${nv_id}`);
                         if (checkbox) checkbox.checked = true;
+                    
                     });
-                });
+                
+                })
+                ;}
+
             })
             .catch(err => {
                 console.log(err);
@@ -87,4 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Lưu thất bại, thử lại sau.');
         });
     });
+});
+
+document.getElementById("shiftMenu").addEventListener("click", () => {
+    const shiftModal = new bootstrap.Modal(document.getElementById("shiftModal"));
+    shiftModal.show();
 });
