@@ -47,9 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
    shiftModalEl.addEventListener('show.bs.modal', () => {
     // Lấy ngày hôm sau
     const tomorrow = new Date();
+    console.log("aaaaaaaaaa"+ Date());
     tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowStr = tomorrow.toISOString().split('T')[0];
 
+    const yyyy = tomorrow.getFullYear();
+    const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    const dd = String(tomorrow.getDate()).padStart(2, '0');
+
+    const tomorrowStr = `${yyyy}-${mm}-${dd}`;
+    console.log("mai: "+ tomorrowStr);
     // Load dữ liệu ca của ngày hôm sau
     loadShiftData(tomorrowStr);
 });

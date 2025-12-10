@@ -7,7 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   saveBtn.addEventListener('click', () => {
     const email = document.getElementById('employeeEmail').value.trim();
     const ca = parseInt(document.getElementById('shiftSelect').value);
-    const ngay = new Date().toISOString().split('T')[0]; // ngày hôm nay
+    const today = new Date();
+
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    const dd = String(today.getDate()).padStart(2, '0');     
+
+    const ngay = `${yyyy}-${mm}-${dd}`; 
+
 
     if (!email) {
       alert('Vui lòng nhập email!');
