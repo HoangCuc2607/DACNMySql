@@ -98,3 +98,22 @@
 .tk-table tbody tr:last-child td:last-child {
     border-bottom-right-radius: 12px;
 }
+.modal-body {
+    max-height: 600px;   /* chiều cao vùng cuộn */
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+/* Tùy chọn: làm scrollbar đẹp */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}

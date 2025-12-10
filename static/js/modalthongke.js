@@ -31,7 +31,7 @@ document.getElementById("btnLocThongKeCa").addEventListener("click", () => {
     const thang = document.getElementById("tkThang").value;
     const nam = document.getElementById("tkNam").value;
 
-    if (!thang || !nam) {
+        if (!thang || !nam) {
         alert("Vui lòng chọn tháng và năm");
         return;
     }
