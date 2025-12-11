@@ -16,6 +16,21 @@ def diemdanh():
     ngay = data['ngay']
 
     nv = NhanVien.GetNhanVienByEmail(email)
+    return checkdiemdanh(nv, ca, ngay)
+
+@diem_danh_bp.route("/diemdanhbangqr", methods = ['POST'])
+def diemdanhbangqr():
+    data = request.json
+    ma_qr = data['tokenqr']
+    ca = data.get('ca')
+    ngay = data['ngay']
+
+    nv = NhanVien.GetNhanVienByQR(ma_qr)
+    return checkdiemdanh(nv, ca, ngay)
+
+
+def checkdiemdanh(nv, ca, ngay):
+    #truyen vao nv 
     if not nv:
         return jsonify({'error': 'Loi khong tim duoc nhan vien'})
     else:
@@ -69,3 +84,4 @@ def diemdanh():
 
     
 
+    

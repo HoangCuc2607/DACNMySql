@@ -1,0 +1,77 @@
+<!-- Modal Điểm danh bằng QR -->
+<div class="modal fade" id="qrCheckInModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content qr-scan-modal">
+
+      <div class="modal-header">
+        <h5 class="modal-title">
+            <i class="fa-solid fa-qrcode me-2"></i>Điểm danh bằng mã QR
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+
+        <!-- Combobox chọn ca -->
+        <div class="mb-3">
+            <label for="selectShift" class="form-label">Chọn ca</label>
+            <select class="form-select" id="selectShift">
+                <option value="1">Ca Sáng</option>
+                <option value="2">Ca Chiều</option>
+                <option value="3">Ca Tối</option>
+            </select>
+        </div>
+
+        <!-- Container quét QR -->
+        <div id="qr-reader" style="width:100%; height:300px; border-radius:12px; background:#0f2230;"></div>
+
+        <div class="scan-info mt-3">
+            Đưa mã QR của nhân viên vào vùng quét
+        </div>
+
+        <div id="scanResult" class="scan-result mt-3"></div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-cancel" data-bs-dismiss="modal">Đóng</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.qr-scan-modal {
+    background: #1B3C53;
+    color: white;
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+.scan-info {
+    font-size: 15px;
+    opacity: 0.8;
+}
+.scan-result {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00eaff;
+}
+.btn-cancel {
+    background: #ffffff33;
+    color: white;
+}
+.btn-cancel:hover {
+    background: #ffffff55;
+    color: white;
+}
+.form-select {
+    background: #6598bd;
+    color: white;
+    border: 1px solid #ffffff44;
+}
+.form-select option {
+    background: #1B3C53;
+    color: white;
+}
+</style>
