@@ -43,6 +43,13 @@ def UpdateNhanVien():
         
         nv = NhanVien.GetNhanVienById(ma_nv)
         if nv:
+            print({'ma_nhan_vien': nv.ma_nhan_vien,
+                'ho_ten': nv.ho_ten,
+                'so_dien_thoai': nv.so_dien_thoai,
+                'dia_chi': nv.dia_chi,
+                'gioi_tinh': nv.gioi_tinh,
+                'email': nv.email,
+                'ngay_sinh': nv.ngay_sinh if isinstance(nv.ngay_sinh, str) else nv.ngay_sinh.strftime("%Y-%m-%d")})
             return jsonify({
                 'ma_nhan_vien': nv.ma_nhan_vien,
                 'ho_ten': nv.ho_ten,
@@ -50,8 +57,9 @@ def UpdateNhanVien():
                 'dia_chi': nv.dia_chi,
                 'gioi_tinh': nv.gioi_tinh,
                 'email': nv.email,
-                'ngay_sinh': nv.ngay_sinh.strftime("%Y-%m-%d") if nv.ngay_sinh else ""
+                'ngay_sinh': nv.ngay_sinh if isinstance(nv.ngay_sinh, str) else nv.ngay_sinh.strftime("%Y-%m-%d")
                 })
+        
         else:
             return jsonify({'error': 'Khong co du lieu nhan vien'}), 404
         
@@ -90,6 +98,26 @@ def DeleteNhanVien():
 def dangxuat():
     session.clear()
     return redirect(url_for("dangnhap.dangnhap"))
+
+@trang_chu_bp.route("/laytatcanhanvien")
+def laytatcanhanvien():
+    ds = NhanVien.GetAllNhanVien()
+    if not ds:
+        return jsonify({'error':'Khong co danh sach nhan vien!'})
+
+    result = []
+    for nv in ds:
+        result.append({
+            'ma_nhan_vien': nv.ma_nhan_vien,
+            'ho_ten': nv.ho_ten,
+            'gioi_tinh': nv.gioi_tinh,
+            'so_dien_thoai': nv.so_dien_thoai,
+            'email': nv.email,
+            'ngay_sinh': nv.ngay_sinh.strftime("%Y-%m-%d") if nv.ngay_sinh else "",
+            'dia_chi': nv.dia_chi
+        })
+
+    return jsonify(result)
 
 
 

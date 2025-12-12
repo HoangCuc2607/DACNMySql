@@ -1,0 +1,87 @@
+<!-- modalDiemDanhQR.html -->
+<div class="modal" id="qrModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeQR">&times;</span>
+
+        <h2>Mã QR của Nhân viên</h2>
+
+        <p>Hãy lưu lại mã QR này để sử dụng khi điểm danh.</p>
+
+        <div class="qr-box">
+            <img id="qrImage" src="" alt="QR Code">
+        </div>
+
+        <a id="downloadQR" class="download-btn" download="ma_qr.png">Tải xuống QR</a>
+    </div>
+</div>
+
+<style>
+    /* NỀN MODAL */
+    #qrModal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.55);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    /* KHUNG MODAL */
+    .modal-content {
+        background: white;
+        width: 380px;
+        padding: 25px;
+        text-align: center;
+        border-radius: 18px;
+        position: relative;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        border-top: 6px solid #1B3C53;
+        animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { transform: translateY(-10px); opacity: 0; }
+        to   { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Nút đóng */
+    .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 26px;
+        color: #1B3C53;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .close-btn:hover {
+        transform: scale(1.2);
+    }
+
+    /* QR IMAGE */
+    .qr-box img {
+        width: 200px;
+        margin: 15px 0;
+        border-radius: 10px;
+        border: 3px solid #1B3C53;
+        padding: 8px;
+        background: white;
+    }
+
+    /* Nút download */
+    .download-btn {
+        display: inline-block;
+        background: #1B3C53;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 10px;
+        transition: 0.25s;
+    }
+    .download-btn:hover {
+        background: #264f6e;
+    }
+</style>

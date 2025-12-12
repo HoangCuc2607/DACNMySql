@@ -1,0 +1,70 @@
+<!-- Modal Danh Sách Tất Cả Nhân Viên -->
+<div class="modal fade" id="dsNhanVienModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content nv-modal">
+
+      <div class="modal-header nv-header">
+        <h5 class="modal-title">
+          <i class="fa-solid fa-users me-2"></i>
+          Danh Sách Tất Cả Nhân Viên
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+
+        <table class="table table-bordered table-striped nv-table">
+          <thead>
+            <tr>
+              <th>Mã NV</th>
+              <th>Họ tên</th>
+              <th>Giới tính</th>
+              <th>SĐT</th>
+              <th>Email</th>
+              <th>Ngày sinh</th>
+              <th>Địa chỉ</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyNhanVien">
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary nv-close" data-bs-dismiss="modal">Đóng</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.nv-modal {
+    background: #1B3C53;
+    color: white;
+    border-radius: 14px;
+    padding: 10px 15px;
+}
+.nv-header {
+    border-bottom: 1px solid #ffffff33;
+}
+.nv-table th {
+    background: #0F2A3C;
+    color: #00ffaa;
+    font-weight: 600;
+}
+.nv-table td {
+    background: white;
+    color: #0F2A3C;
+}
+.nv-close {
+    background: #ffffff33;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.nv-close:hover {
+    background: #ffffff55;
+}
+</style>
