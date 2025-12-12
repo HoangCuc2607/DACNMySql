@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         `<span style="color:#ff7777">Lỗi kết nối server</span>`;
                 });
 
-                qrScanner.stop(); // Dừng quét sau khi đã quét xong
+                // qrScanner.stop(); // Dừng quét sau khi đã quét xong
             },
 
             // lỗi khi quét
