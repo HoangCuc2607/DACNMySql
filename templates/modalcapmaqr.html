@@ -1,0 +1,78 @@
+<!-- Modal Cấp lại QR -->
+<div class="modal fade" id="qrRegenerateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content qr-regenerate-modal">
+
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="fa-solid fa-qrcode me-2"></i>Cấp lại mã QR
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+
+        <label for="emailInput" class="form-label">Nhập email nhân viên</label>
+        <input type="email" id="emailInput" class="form-control mb-3" placeholder="example@company.com">
+
+        <button id="generateQRBtn" class="btn btn-primary w-100">Cấp mã QR mới</button>
+
+        <!-- QR Result -->
+        <div id="qrResult" class="mt-3 text-center"></div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-cancel" data-bs-dismiss="modal">Đóng</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- STYLE -->
+<style>
+.qr-regenerate-modal {
+    background: #1B3C53;
+    color: white;
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+#qrResult img {
+    margin-top: 15px;
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+}
+#downloadQR {
+    margin-top: 12px;
+    display: inline-block;
+    padding: 8px 14px;
+    background: #00ffaa;
+    color: #1B3C53;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+}
+#downloadQR:hover {
+    background: #00cc99;
+    color: #1B3C53;
+}
+.btn-cancel {
+    background: #ffffff33;
+    color: white;
+}
+.btn-cancel:hover {
+    background: #ffffff55;
+}
+.btn-primary {
+    background: #00ffaa;
+    border: none;
+    color: #1B3C53;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background: #00cc99;
+    color: #1B3C53;
+}
+</style>

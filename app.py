@@ -5,7 +5,7 @@ from controllers.ModalChiacaController import chia_ca_bp
 from controllers.DangkyController import dang_ky_bp
 from controllers.ModalDiemdanhController import diem_danh_bp
 from controllers.ModalThongkeController import thong_ke_bp
-
+from controllers.ModalCapmaqrController import cap_lai_qr_bp
 
 app = Flask(__name__)
 app.secret_key = "abc123"
@@ -17,6 +17,8 @@ app.register_blueprint(chia_ca_bp, url_prefix = "/trangchu")
 app.register_blueprint(dang_ky_bp, url_prefix = "/trangchu")
 app.register_blueprint(diem_danh_bp, url_prefix = "/trangchu")
 app.register_blueprint(thong_ke_bp, url_prefix = "/trangchu")
+app.register_blueprint(cap_lai_qr_bp, url_prefix = "/trangchu")
+
 
 
 
